@@ -1,9 +1,11 @@
-function somar(a , b){
-    return a + b
-}
+const express = require("express")
+const app = express()
 
-function sub(a , b){
-    return a - b
+app.get("/" , function(req,res){
+    res.send('<h1>olá mundo</h1>')
 }
+)
 
-console.log()
+app.listen(8081 , function(){
+    console.log('servidor rodando na porta http://localhost:8081')
+});
