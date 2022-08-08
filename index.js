@@ -15,7 +15,7 @@ app.get("/minha-rota" , function(req , res){
 })
 
 //criando um parametro
-app.get("/minha-rota/meu-parametro" , function(req , res){
+app.get("/minha-rota/:meu-parametro" , function(req , res){
     res.send('<h1>meu parametro</h1>')
 })
 
