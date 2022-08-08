@@ -9,9 +9,14 @@ app.get("/" , function(req,res){
 })
 
 //criando outra rota
-app.get("/minha rota" , function(req , res){
+app.get("/minha-rota" , function(req , res){
     res.send('<h1>Minha segunda rota</h1>')
 
+})
+
+//criando um parametro
+app.get("/minha-rota/meu-parametro" , function(req , res){
+    res.send('<h1>meu parametro</h1>')
 })
 
 //porta que está sendo ouvida
