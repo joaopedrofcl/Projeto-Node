@@ -1,11 +1,12 @@
-const mysqlsenha = require("./senha") //importa a senha de um arquivo externo que eu criei
+//importando mminha senha de um arquivo externo
+const mysqlsenha = require('./senha')
+const senhamysql = mysqlsenha.mysqlsenha
 
-const Sequilize = require("sequelize") //importa o modulo sequelize
+const Sequelize = require("sequelize") // importação do modulo sequelize
 
- //adicionamos as informações de acesso ao banco de dados atraves dessa constante
-const sequelize = new Sequelize("teste" , "root" , mysqlsenha , {
-    host: "localhost" , //informa onde estamos roteando a aplicação
-    dialect: "mysql" //Informa que estamos usando o banco de dados MYSQL
+const sequelize = new Sequelize("teste" , "root" , senhamysql , {
+    host: "localhost" ,
+    dialect: "mysql" 
 })
 
 /* o comando squelize.authenticate() serve para conectar a aplicação ao banco de dados
@@ -15,5 +16,5 @@ ele irá retornar  os parametros que estão dentro dele. o catch segue o mesmo p
 sequelize.authenticate().then(function(){
     console.log('Conectado ao banco de dados MYSQL')
 }).catch(function(erro){
-    console.log("falha ao conectar" + erro)
+    console.log("falha ao conectar"+erro)
 })
