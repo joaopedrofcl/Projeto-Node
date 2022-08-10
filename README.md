@@ -1,5 +1,5 @@
 <h1>Projeto-Node</h1>
-<h2>Do que se trata o projeto</h2>
+<h2>Sobre o projeto</h2>
 <p> Esse é um projeto sistema em backend desenvolvido por mim com Node.js </p>
 <H2>Ferramentas utilizadas</H2>
 <ul>
