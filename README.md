@@ -10,9 +10,9 @@
 </ul>
 <h2>Conceitos Trabalhados</h2>
 <ul>
-<li>Criação de rotas<li>
-<li>conexão com banco de dados<li>
-<li>programação assincrona<li>
-<li>middlewares<li>
+<li>Criação de rotas</li>
+<li>conexão com banco de dados</li>
+<li>programação assincrona</li>
+<li>middlewares</li>
 </ul>
 
