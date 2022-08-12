@@ -28,7 +28,7 @@ const app  = express()
         });
 
         sequelize.authenticate().then(function(){
-            console.log('servidor conectado com sucesso')
+            console.log('servidor conectado ao MYSQL com sucesso')
         }).catch(function(erro){
             console.log('falha ao conectar'+ erro)
         })
