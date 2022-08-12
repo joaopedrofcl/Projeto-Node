@@ -23,3 +23,4 @@ const sequelize = new Sequelize('projetonode', 'root', senhamysql , {
         }
       }, {
       });
+module.exports = Categoria
