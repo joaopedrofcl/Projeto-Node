@@ -3,7 +3,7 @@ const { Promise } = require('sequelize')
 const router = express.Router()
 
 router.get('/', function(req , res){
-    res.send('Página principal do painel ADM')
+    res.render('admin/index')
 
 })
 
