@@ -4,8 +4,8 @@ const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const admin = require('./routes/admin')
 const path = require('path')
-//const Sequelize = require("sequelize")
-
+const Sequelize = require("sequelize")
+const mysqlsenha = require('./senha')
 //Atribuindo a função express a constante app
 const app  = express()
 
@@ -15,13 +15,23 @@ const app  = express()
         app.use(bodyParser.urlencoded({extended: true}))
         app.use(bodyParser.json())
 
-        //Handlebars
+    //Handlebars
         const hbs = handlebars.create({ defaultLayout:'main' });
         app.engine('handlebars', hbs.engine);
         app.set('view engine', 'handlebars')
 
     //Sequelize
+        const senhamysql = mysqlsenha.mysqlsenha
+        const sequelize = new Sequelize('projetonode', 'root', senhamysql , {
+            host: 'localhost',
+            dialect: 'mysql' 
+        });
 
+        sequelize.authenticate().then(function(){
+            console.log('servidor conectado com sucesso')
+        }).catch(function(erro){
+            console.log('falha ao conectar'+ erro)
+        })
     //Public
     app.use(express.static(path.join(__dirname , 'public')))
 
