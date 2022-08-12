@@ -3,6 +3,7 @@ const express = require('express')
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const admin = require('./routes/admin')
+const { Sequelize } = require('sequelize/types')
 //const Sequelize = require("sequelize")
 
 //Atribuindo a função express a constante app
@@ -18,7 +19,10 @@ const app  = express()
         const hbs = handlebars.create({ defaultLayout:'main' });
         app.engine('handlebars', hbs.engine);
         app.set('view engine', 'handlebars')
-        //Sequelize
+
+//Sequelize
+
+    const sequelize = new Sequelize({})
 
 //Rotas
 
