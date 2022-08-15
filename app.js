@@ -4,6 +4,7 @@ const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const admin = require('./routes/admin')
 const path = require('path')
+//modulos do mongoose
 
 //Atribuindo a função express a constante app
 const app  = express()
