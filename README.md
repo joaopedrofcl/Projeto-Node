@@ -4,8 +4,8 @@
 <H2>Ferramentas utilizadas</H2>
 <ul>
 <li>Express</li>
-<li>Banco de dados MYSQL</li>
-<li>Sequelize</li>
+<li>Mongo DB</li>
+<li>Mongoose</li>
 <li>handlebars</li>
 </ul>
 <h2>Conceitos Trabalhados</h2>
