@@ -27,7 +27,7 @@ router.post('/categorias/nova' , function(req , res){
     slug: req.body.slug
    }
 
-   new Categoria(novaCategoria).save.then(function(){
+   new Categoria(novaCategoria).save().then(function(){
     console.log('categoria salva com sucesso')
    }).catch(function(err){
     console.log('Erro ao salvar categoria:'+err)
