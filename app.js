@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const admin = require('./routes/admin')
 const path = require('path')
 //modulos do mongoose
-
+const mongoose = require('mongoose')
 //Atribuindo a função express a constante app
 const app  = express()
 
@@ -20,7 +20,13 @@ const app  = express()
         app.engine('handlebars', hbs.engine);
         app.set('view engine', 'handlebars')
 
-    //Sequelize
+    //Mongoose
+    mongoose.Promise = global.Promise
+    mongoose.connect('mongodb://localhost/blogapp').then(function(){
+        console.log('Mongoose conectado com sucesso')
+    }).catch(function(err){
+        console.log('Erro ao se conectar'+err)
+    })
       
     //Public
     app.use(express.static(path.join(__dirname , 'public')))
