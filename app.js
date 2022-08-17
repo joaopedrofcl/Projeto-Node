@@ -9,6 +9,7 @@ const mongoose = require('mongoose')
 //Atribuindo a função express a constante app
 const app  = express()
 
+
 //Config
 
     //Body Parser
