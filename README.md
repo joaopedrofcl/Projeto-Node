@@ -7,9 +7,11 @@
 <li>Mongo DB</li>
 <li>Mongoose</li>
 <li>handlebars</li>
+<li>body parser</li>
 </ul>
 <h2>Conceitos Trabalhados</h2>
 <ul>
+<li>middlewares</li>
 <li>Criação de rotas</li>
 <li>conexão com banco de dados</li>
 <li>programação assincrona</li>
