@@ -37,18 +37,21 @@ router.post('/categorias/nova' , function(req , res){
 
     if(erro.length > 0){
         res.render('admin/addcategorias' , {erros: erro})
+    }else{
+        const novaCategoria = {
+            nome: req.body.nome,
+            slug: req.body.slug
+           }
+           new Categoria(novaCategoria).save().then(function(){
+            req.flash('succes_msg' , 'Categoia criada com sucesso!')
+            res.redirect('/admin/categorias')
+           }).catch(function(err){
+            req.flash('erro_msg' , 'Houve um erro ao salvar a categoria, tente novamente!')
+            console.log('Erro ao salvar categoria:'+err)
+           })
     }
 
-   const novaCategoria = {
-    nome: req.body.nome,
-    slug: req.body.slug
-   }
 
-   new Categoria(novaCategoria).save().then(function(){
-    console.log('categoria salva com sucesso')
-   }).catch(function(err){
-    console.log('Erro ao salvar categoria:'+err)
-   })
 })
 
 
