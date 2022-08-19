@@ -4,13 +4,29 @@ const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const admin = require('./routes/admin')
 const path = require('path')
-//modulos do mongoose
 const mongoose = require('mongoose')
+const session = require('express-session')
+const flash = require('connect-flash')
+
 //Atribuindo a função express a constante app
 const app  = express()
 
 
+
 //Config
+
+    //Session
+    app.use(session({
+        secret: 'projetonode' , 
+        resave: true , 
+        saveUninitialized: true
+    }))
+    app.use(flash())
+    //middleware
+    app.use(function(req , res , next){
+        res.locals.success_msg = req.flash("sucess_msg")
+        res.locals.error_msg = req.flash('error_msg')
+    })
 
     //Body Parser
         app.use(bodyParser.urlencoded({extended: true}))
