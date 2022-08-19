@@ -31,7 +31,13 @@ router.post('/categorias/nova' , function(req , res){
         erro.push({texto: 'Slug inválido'})
     }
 
+    if(req.body.nome.length < 2 ){
+        erro.push({texto: 'Nome muito pequeno'})
+    }
     
+    if(erro.length > 0){
+        res.render('addcategorias' , {erros: erros})
+    }
 
    const novaCategoria = {
     nome: req.body.nome,
