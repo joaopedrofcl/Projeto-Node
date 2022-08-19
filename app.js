@@ -26,6 +26,7 @@ const app  = express()
     app.use(function(req , res , next){
         res.locals.success_msg = req.flash("sucess_msg")
         res.locals.error_msg = req.flash('error_msg')
+        next()
     })
 
     //Body Parser
