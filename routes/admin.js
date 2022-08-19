@@ -47,7 +47,7 @@ router.post('/categorias/nova' , function(req , res){
             res.redirect('/admin/categorias')
            }).catch(function(err){
             req.flash('erro_msg' , 'Houve um erro ao salvar a categoria, tente novamente!')
-            console.log('Erro ao salvar categoria:'+err)
+            res.redirect('/admin')
            })
     }
 
