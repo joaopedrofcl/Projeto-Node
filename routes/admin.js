@@ -22,7 +22,7 @@ router.get('/categorias/add' , function(req , res){
 })
 
 router.post('/categorias/nova' , function(req , res){
-    
+    //validação das categorias
     var erro = []
     if(!req.body.nome || typeof req.body.nome == undefined || req.body.nome == null){
         erro.push({texto: 'Nome inválido'})
