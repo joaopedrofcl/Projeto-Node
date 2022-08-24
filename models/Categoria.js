@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-//criando categorias no banco de dados
+
 const Categoria = new Schema({
     nome:{
         type: String,
