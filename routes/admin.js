@@ -14,7 +14,7 @@ router.get('/posts', function(req , res){
 })
 
 router.get('/categorias', function(req , res){
-    Categoria.find().lean().then(function(categorias){
+    Categoria.find().sort({date: 'desc'}).lean().then(function(categorias){
         res.render('admin/categorias' , {categorias: categorias})
     }).catch(function(err){
         req.flash('error_msg' , 'Houve um erro ao listar categorias')
