@@ -66,4 +66,6 @@ router.post('/categorias/nova' , function(req , res){
             res.redirect('/admin/categorias')
         })
     })
+
+    
 module.exports = router
