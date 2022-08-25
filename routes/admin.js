@@ -67,5 +67,21 @@ router.post('/categorias/nova' , function(req , res){
         })
     })
 
-    
+    //post
+
+    router.post('/categorias/edit/:id' , function(req , res){
+        Categoria.findOne({_id:req.body.id}).lean().then(function(categoria){
+            categoria.nome = req.body.nome
+            categoria.slug =  req.body.slug
+
+            categoria.save().then(function(){
+                req.flash('succes_msg' , 'categoria editada com sucesso')
+                res.redirect('/admin/categorias')
+            })
+        }).catch(function(err){
+            req.flash("error_msg" , "Esta categoria não existe")
+            res.redirect('/admin/categorias')
+        })
+    })
+
 module.exports = router
