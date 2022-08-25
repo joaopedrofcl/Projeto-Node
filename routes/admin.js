@@ -59,6 +59,6 @@ router.post('/categorias/nova' , function(req , res){
 
 })
     router.get('/categorias/edit/:id' , function(req , res){
-        res.send('pagina de edição de categoria')
+        res.render('admin/editcategorias')
     })
 module.exports = router
