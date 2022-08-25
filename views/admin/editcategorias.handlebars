@@ -7,6 +7,7 @@
 <div class="card">
 <div class="card-body">
     <form action="/admin/categorias/nova" method="post">
+    <input type="hidden" name="id" id="{{categoria._id}}">
     <label for="nome">Nome:</label>
     <input type="text" id="nome" name="nome" placeholder="Nome da categoria" class="form-control" value="{{categoria.nome}}">
     <label for="slug">Slug:</label>
