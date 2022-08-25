@@ -59,6 +59,11 @@ router.post('/categorias/nova' , function(req , res){
 
 })
     router.get('/categorias/edit/:id' , function(req , res){
-        res.render('admin/editcategorias')
+        Categoria.findOne({_id:req.body.id}).then(function(categoria){
+            res.render('admin/editcategorias' , {categoria: categoria})
+        }).catch(function(err){
+            req.flash("error_msg" , "Esta categoria não existe")
+            res.redirect('/admin/categorias')
+        })
     })
 module.exports = router
