@@ -57,8 +57,8 @@ router.post('/categorias/nova' , function(req , res){
            })
     }
 
-
 })
-
-
+    router.get('/categorias/edit/:id' , function(req , res){
+        res.send('pagina de edição de categoria')
+    })
 module.exports = router
